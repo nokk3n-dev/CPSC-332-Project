@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        .title-header {
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+            }
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="styles.css">
+    <div class="title-header">Academic Event Management Company</div>
 </head>
 <body>
-    <div class="registration-container">
+    <div class="login-container">
         <h2>Register</h2>
         <form id="registrationForm" action="register.php" method="post">
             <div class="form-group">
                 <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" required>
+                <input type="text" id="fname" name="fname" placeholder="*required" required>
             </div>
             <div class="form-group">
                 <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lname" required>
+                <input type="text" id="lname" name="lname" placeholder="*required" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="email" name="email" placeholder="*required" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="*required" required>
                 <span id="passwordError" class="error-message" style="display: none;">Password is too simple!</span>
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="*required" required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number:</label>
