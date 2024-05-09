@@ -50,6 +50,27 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* CSS for the button */
+.signup-button {
+    display: block;
+    width: 200px;
+    height: 80px;
+    margin: 50px auto; /* Center the button horizontally */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline for anchor element */
+}
+.signup-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
 #error {
     color: red;
 }

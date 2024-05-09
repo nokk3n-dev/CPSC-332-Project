@@ -15,7 +15,7 @@
         <button class="back-button" onclick="goBack()">Back</button>
     </div>
 
-    <h1 font-align="center">Create Event</h1>
+    <h1>Create Event</h1>
 
     <div class="login-container">
         <!-- Event creation form -->
@@ -24,7 +24,7 @@
             <input type="text" id="eventName" name="eventName" required><br><br>
 
             <label for="eventDescription">Event Description:</label><br>
-            <textarea id="eventDescription" name="eventDescription" rows="4" cols="50" required></textarea><br><br>
+            <textarea id="eventDescription" name="eventDescription" rows="4" cols="40" required></textarea><br><br>
 
             <label for="startDate">Start Date:</label>
             <input type="date" id="startDate" name="startDate" required><br><br>

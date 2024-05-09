@@ -57,11 +57,11 @@
 <body>
     <div class="title-header">Academic Event Management Company - User Account</div>
 
-    <a href="eventSignup.php" class="signup-button">Your Events</a>
+    <a href="userViewSignedEvents.php" class="signup-button">Your Events</a>
 
     <a href="createEvent.php" class="signup-button">Register For Event</a>
 
-    <a href="createEvent.php" class="signup-button">View Events</a>
+    <a href="userViewEvents.php" class="signup-button">View Events</a>
 
     <a href="login.html" class="logout-button">Log Out</a>
 

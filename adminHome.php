@@ -57,7 +57,7 @@
 <body>
     <div class="title-header">Academic Event Management Company - Admin Account</div>
 
-    <a href="eventSignup.php" class="signup-button">Manage Events</a>
+    <a href="adminManageEvent.php" class="signup-button">Manage Events</a>
 
     <a href="createEvent.php" class="signup-button">Create Event</a>
 

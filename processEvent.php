@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zipCode = $_POST['ZipCode'];
     $submissionDeadline = $_POST['SubmissionDeadline'];
     $status = $_POST['status'];
+    // Need to add AdminID
 
     // Prepare SQL statement to insert event details into the database
     $sql = "INSERT INTO event (Name, Description, StartDate, StartTime, EndDate, EndTime, MaxCapacity, VenueID, UniversityID, Address, City, State, ZipCode, SubmissionDeadline, Status) 
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <script>
         function goBack() {
-            window.location.href = 'home.php';
+            window.location.href = 'adminHome.php';
         }
     </script>
 

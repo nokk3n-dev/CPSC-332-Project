@@ -40,6 +40,7 @@ drop table if exists event;
 -- Event Table
 CREATE TABLE event (
     EventID INT AUTO_INCREMENT PRIMARY KEY,
+    AdminID INT,
     StartTime TIME,
     EndTime TIME,
     StartDate DATE,
@@ -56,7 +57,8 @@ CREATE TABLE event (
     State VARCHAR(100),
     ZipCode VARCHAR(20),
     FOREIGN KEY (VenueID) REFERENCES Venue(VenueID),
-    FOREIGN KEY (UniversityID) REFERENCES University(UniversityID)
+    FOREIGN KEY (UniversityID) REFERENCES University(UniversityID),
+    FOREIGN KEY (AdminID) REFERENCES user(UserID)
 );
 
 drop table if exists presenter;
@@ -132,3 +134,6 @@ INSERT INTO University (UniversityID, Name) VALUES ('0001', 'University of South
 
 INSERT INTO Venue (VenueID, Name, ZipCode, City, Address, UniversityID) 
 VALUES ('0001', 'USC Football Stadium', '90089', 'Los Angeles', '123 Main Street', '0001');
+
+INSERT INTO event (StartTime, EndTime, StartDate, EndDate, Description, Status, SubmissionDeadline, Name, MaxCapacity, VenueID, UniversityID, Address, City, State, ZipCode, AdminID) 
+VALUES ('09:00:00', '17:00:00', '2023-08-01', '2023-08-05', 'Celebration of all things LA', 'Published', '2023-07-01', 'La Expo 2023', 9999, 0001, 0001, 'USC Football Stadium', 'Los Angeles', 'CA', '90007', 1);
