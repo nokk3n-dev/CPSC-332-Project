@@ -74,7 +74,7 @@
 
     <script>
         function goBack() {
-            window.location.href = 'home.php';
+            window.location.href = 'userHome.php';
         }
     </script>
 </body>

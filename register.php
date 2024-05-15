@@ -33,7 +33,9 @@ if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) &
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     $phone = isset($_POST['phone']) ? $_POST['phone'] : null; // Handle optional phone field
+    $IsAdmin = isset($_POST["adminCheckbox"]) ? 1 : 0; // 1 if checked, 0 if unchecked
 
+    // Reset if password is too easy
     if (!validatePassword($password)) {
         header("Location: registration.html?error=password_too_easy");
         exit;
@@ -42,19 +44,24 @@ if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) &
     // Validate confirm password
     if ($password !== $confirmPassword) {
         header("Location: registration.html?error=passwords_do_not_match");
-        exit; // Exit script if passwords don't match
+        exit;
     }
 
     // Prepare SQL statement to insert user data into the database
-    $sql = "INSERT INTO user (Fname, Lname, Email, Password, PhoneNumber) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO user (Fname, Lname, Email, Password, PhoneNumber, IsAdmin) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
-    $stmt->bind_param("sssss", $fname, $lname, $email, $password, $phone);
+    $stmt->bind_param("ssssss", $fname, $lname, $email, $password, $phone, $IsAdmin);
 
     // Execute the SQL statement
     if ($stmt->execute()) {
         // Registration successful
         echo "Registration successful!";
-        header("Location: home.php");
+        if($IsAdmin == 1)
+        {
+            header("Location: adminHome.php");
+        } else {
+            header("Location: userHome.php");
+        }
     } else {
         // Registration failed
         echo "Error: " . $sql . "<br>" . $db->error;

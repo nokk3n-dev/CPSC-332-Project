@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var response = xhr.responseText;
                 if (response.trim() == "success") {
-                    window.location.href = "home.php"; // Redirect to home page
+                    window.location.href = "userHome.php"; // Redirect to home page
                 } else {
                     document.getElementById("message").innerHTML = "Incorrect Email or Password";
                 }
